@@ -1,6 +1,18 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
 
+html{
+  cursor: url(../images/images_home/puntero1.png), 
+  auto;
+}
+span,a:hover{
+  cursor: url(../images/images_home/cursor-de-mano.png), 
+  auto;
+}
+input:hover{
+  cursor: url(../images/images_home/escribe.png), 
+  auto;
+}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
 s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
@@ -89,11 +101,17 @@ img {
 
 body .page-content {
   margin-top: 110px;
-  background-color: #1b1726;
+ /*   background-color: #1b1726; */
   padding: 60px;
   border-radius: 23px;
 }
+body{
+  background: linear-gradient(to bottom,transparent 10%, #150628, #08070c );
 
+
+
+
+}
 p {
   font-size: 15px;
   color: #666;
@@ -119,7 +137,7 @@ p {
 .main-button a {
   font-size: 14px;
   color: #fff;
-  background-color: #e75e8d;
+  background-color: #4c106e;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 25px;
@@ -133,12 +151,12 @@ p {
 
 .main-button a:hover {
   background-color: #fff;
-  color: #e75e8d;
+  color: #470653;
 }
 
 .main-border-button a {
   font-size: 14px;
-  color: #0af30a;
+  color: #8e0af3;
   background-color: transparent;
   border: 1px solid #bbffc9;
   padding: 12px 30px;
@@ -173,19 +191,7 @@ section {
   margin-top: 120px;
 }
 
-.heading-section h4 {
-  color: #ec6090;
-  font-size: 34px;
-  text-decoration: none;
-  margin-bottom: 30px;
-  text-align: center;
-}
 
-.heading-section h4 em {
-  color: #fff;
-  font-style: normal;
-  text-decoration: underline;
-}
 
 /* 
 ---------------------------------------------
@@ -565,7 +571,61 @@ margin-left: 56px;
 Most Popular Style
 --------------------------------------------- 
 */
+/* busqueda */
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: absolute;
+  max-width: 490px;
+  margin-left: 81%;
+  margin-top: -6%;
+}
 
+.input {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 45px;
+  padding-left: 2.5rem;
+  box-shadow: 0 0 0 1.5px #2b2c37, 0 0 25px -17px #000;
+  border: 0;
+  border-radius: 12px;
+  background-color: #16171d;
+  outline: none;
+  color: #bdbecb;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+ 
+}
+
+.input::placeholder {
+  color: #bdbecb;
+}
+
+.input:hover {
+  box-shadow: 0 0 0 2.5px #2f303d, 0px 0px 25px -15px #000;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2.5px #2f303d;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  fill: #bdbecb;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* busqueda end */
 .sidebar {
   position: fixed;
   top: 0;
@@ -575,10 +635,11 @@ Most Popular Style
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #2a0c52;
+  background: #1e093a;
   backdrop-filter: blur(17px);
   --webkit-backdrop-filter: blur(17px);
   border-right: 1px solid rgba(50, 22, 59, 0.861);
+  box-shadow: 0px 0px 19px black ;
   transition: width 0.3s ease;
 }
 .sidebar:hover {
@@ -665,22 +726,143 @@ Most Popular Style
   margin-top: 20px;
 }
 .btn_log{
+  color: white;
 border: none;
   text-decoration: none;
   background-color: transparent;
 
 }
+.btn_log:hover{
+  color: black;
+}
 
 /* slide bar  */
 
+/* title */
+.section_title{
+  position: absolute;
+  margin-left: 56px;
+  border: 2px red;
+  z-index: 100;
+  background-color: #10f11f;
+  margin-top: 20%;
+  width: 100%;
+}
+.content_title{
+position: relative;
+  display: block;
+  width: 900px;
+  height: 200px;
+ margin: auto;
+ overflow: hidden;
+
+}
+
+
+/* animacion */
+.loader {
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  border-right: 3px solid;
+  width: 284px;
+  animation: typewriter 2s steps(7)  infinite alternate , blink 0.5s steps(10) infinite;
+}
+
+.loader-text {
+  font-size: 50px;
+  font-weight: 700;
+  background: linear-gradient(to right,#85bb8c, #ac79ac);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: rgba(255,255,255,.75);
+    ;
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+/*  title end*/
+
+
+/* nav_ filtro */
+.navigation-card a span{
+  color: white;
+}
+.navigation-card {
+  border: solid 1px black;
+  box-shadow: 0px 0px 10px black;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 110px;
+  background-color: rgba(82, 9, 88, 0.575);
+  padding: 15px 20px;
+  border-radius: 50px;
+  margin: auto;
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+.navigation-card:hover{
+  scale: 102%;
+  background-color: #470653;
+} 
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: rgb(64, 7, 85);
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.tab span:hover{
+  scale: 108%;
+  box-shadow: 0px 0px 35px rgb(12, 1, 12);
+}
+
+.tab:hover h6{
+  background-color: rgb(31, 2, 50);
+  display: block;
+}
+
+
+/* cards */
 .most-popular {
+  border: solid 1px black;
+  box-shadow: 0px 0px 10px black;
   margin-top: 30px;
   padding: 30px;
-  background-color: #1b1726;
+  background-color: #14111c;
   border-radius: 13px;
 }
 
 .most-popular .item {
+  border: solid 1px black;
+  box-shadow: 0px 0px 10px black;
   background-color: #321043bc;
  padding-top: 10px;
  padding-left: 10px;
@@ -692,7 +874,7 @@ border: none;
 }
 .most-popular .item:hover{
   scale: 103%;
-  cursor: pointer;
+  cursor: url(../images/images_home/seleccion.png), auto;
   box-shadow: 0px 0px 14px rgba(245, 222, 179, 0.16);
 } 
 
@@ -756,7 +938,4 @@ border: none;
 }
 
 
-.hidden{
-  display: none;
-}
 

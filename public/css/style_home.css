@@ -8,6 +8,18 @@
     list-style: none;
     scroll-behavior: smooth;
 }
+html{
+    cursor: url(../images/images_home/puntero1.png), 
+    auto;
+  }
+  a:hover{
+    cursor: url(../images/images_home/cursor-de-mano.png), 
+    auto;
+  }
+  input:hover{
+    cursor: url(../images/images_home/escribe.png), 
+    auto;
+  }
 body {
     font-family: "Poppins", sans-serif;
     background-color: #1b1726;
