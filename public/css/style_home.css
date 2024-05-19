@@ -1,0 +1,557 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #1b1726;
+}
+img{
+    max-width: 100%;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header{
+    background-image: url(../../../images/images_home/fondo_banner.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding: 80px 0;
+}
+/* btn logo proyect gaming*/
+.btn_logo,
+.btn_logo::after {
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #31d20490 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #007523;
+ outline: transparent;
+ position: relative;
+}
+.btn_logo::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #edf81acf 3%, #02bcc97a 5%, #04b57aa2 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #07bcc9;
+ clip-path: var(--slice-0);
+}
+.btn_logo:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+/* fin btn proyect gaming */
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+.menu .navbar ul li a{
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    display: block;
+    margin-top: 20px;
+}
+.menu .navbar ul li a:hover{
+    color: #40c10dc8;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+#menu{
+    display: none;
+}
+.menu-icono{
+    width: 25px;
+}
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+.header-content{
+    position: relative;
+    margin-left: 5%;
+    width: 45%;
+    height: 20%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+}
+.header-txt{
+    flex-basis: 50%;
+    padding: 20px;
+}
+.header-txt h1{
+    font-size: 60px;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+.header-txt span{
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+    color: #40c10dfd;
+}
+.header-txt p{
+    font-size: 17px;
+    color: #ffffff;
+    margin-bottom: 45px;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    text-shadow:
+        3px 3px 0 #000,
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+       -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+}
+
+.butons{
+    display: flex;
+}
+.btn-1, .btn-2, .btn-3{
+    display: inline-block;
+    padding: 11px 35px;
+    border: 2px solid #40c10dc8;
+    border-radius: 25px;
+    margin-right: 25px;
+    font-size: 17px;
+    color: #FFFFFF;
+}
+.btn-1:hover{
+    background-color: #40c10dc8;
+}
+.letter{
+    background-color: #2A223A;
+    
+}
+.popular{
+    padding: 100px 0;
+    text-align: center;
+}
+h2{
+    color: #FFFFFF;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+.popular-content{
+    display: flex;
+    justify-content: space-between;
+}
+.popular-content img:hover{
+    scale: 105%;
+    box-shadow: 0px 0px 14px rgb(218, 221, 219);
+}
+.popular-content img{
+    width: 150px;
+}
+.product-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+.product-1{
+    background-color: #2A223A;
+}
+.product-1:hover{
+    scale: 103%;
+    box-shadow: 0px 0px 24px rgba(218, 221, 219, 0.215);
+    cursor: pointer;
+}
+.product-txt{
+    padding: 50px 30px;
+}
+h3{
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price p{
+    font-size: 17px;
+    color: #07fe18;
+}
+.btn-2{
+    padding: 5px 25px;
+    background-color: #40c10dc8;
+    margin-right: 0;
+}
+.btn-2:hover{
+    background-color: #2c800ac8;
+}
+.contact{
+    padding: 150px 300px;
+}
+.contact-content{
+    background-color: #2A223A;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+}
+form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+input{
+    padding: 18px 25px;
+    background-color: #3F2456;
+    border: 0;
+    border-radius: 25px;
+    outline: none;
+    margin-right: 10px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+::placeholder{
+    color: #E0E0E0;
+    font-size: 17px;
+}
+.btn-3{
+    background-color: #40c10dc8;
+    cursor: pointer;
+    margin-right: 0;
+}
+.btn-3:hover{
+    background-color: #2c800ac8;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+}
+.link ul{
+    display: flex;
+}
+.link ul li > a{
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-right: 20px;
+}
+.link ul li > a:hover{
+    color: #FF5A2C;
+}
+/* letras*/
+.letter{
+    background-color: #1b1726;
+}
+.gamer-background {
+    position: relative;
+    perspective: 1000px;
+    width: 90%; 
+    height: 250px; 
+    background-color: #1b1726; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); 
+    overflow: hidden;
+    margin: auto;
+    margin-top: 60px;
+}
+.gamer-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+.gamer-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    z-index: 2; /
+}
+.gamer-text::before,
+.gamer-text::after {
+    content: "";
+    position: absolute;
+    top: 6px; /* Ajusta la separación entre la línea y las letras */
+    width: 100%; /* Hacer la línea tan larga como el contenedor del texto */
+    height: 2px; /* Altura de la línea */
+    background: linear-gradient(
+        to right,
+        transparent,
+        #4caf50,
+        transparent
+    ); /* Línea con degradado en los extremos */
+    z-index: 0; /* Coloca las líneas detrás del texto */
+}
+.gamer-text::before {
+    left: 0;
+}
+.gamer-text::after {
+    right: 0;
+    transform: scaleX(-1); 
+}
+.gamer-text.animate::before,
+.gamer-text.animate::after {
+    animation: lines-animation 1s forwards; 
+}
+.gamer-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.5s forwards;
+}
+@keyframes reveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes cursor-initial {
+    0% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5) translateX(-100%); 
+    }
+}
+@keyframes cursor-transform {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes cursor-move {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes letters-animation {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes lines-animation {
+    to {
+        transform: translateY(100%); 
+    }
+}
+.gamer-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    margin-top: 20px; 
+    animation: reveal 0.5s forwards;
+}
+/*responsive*/
+@media(max-width:991px){
+    .menu{
+        padding: 20px;
+    }
+
+    .menu label{
+        display: initial;
+    }
+    
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FF5A2C;
+        display: none;
+    }
+
+    .menu .navbar ul li a:hover{
+        color: #1b1726;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+
+    .header{
+        min-height: 0vh;
+        padding: 80px 30px 50px 30px;
+    }
+
+    .header-txt h1{
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+    .header-txt h1{
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .butons{
+        justify-content: center;
+    }
+
+    .btn-1:last-of-type{
+        margin-right: 0;
+    }
+
+    .popular{
+        display: none;
+    }
+
+    .product{
+        padding: 30px;
+    }
+
+    .product-content{
+        grid-template-columns: repeat(1,1fr);
+        gap: 30px;
+    }
+
+    .product-1 img{
+        width: 100%;
+    }
+
+    .contact{
+        padding: 30px;
+    }
+
+    form{
+        flex-direction: column;
+    }
+
+    input{
+        margin: 0 0 20px 0;
+    }
+
+    .footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .link ul{
+        margin-top: 20px;
+    }
+
+    .modal__container{
+        padding: 2em 1.5em;
+    }
+
+}
