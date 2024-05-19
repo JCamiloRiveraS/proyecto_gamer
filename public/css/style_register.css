@@ -2,10 +2,11 @@ html{
     cursor: url(../images/images_home/puntero1.png), 
     auto;
   }
-  a:hover{
+ span,a, button:hover{
     cursor: url(../images/images_home/cursor-de-mano.png), 
     auto;
   }
+
   input:hover{
     cursor: url(../images/images_home/escribe.png), 
     auto;
