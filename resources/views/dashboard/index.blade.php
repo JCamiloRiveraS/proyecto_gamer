@@ -3,11 +3,11 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+    <link rel="icon" href="{{ asset('images/images_home/control-de-juego.png') }}" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Gamify</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"

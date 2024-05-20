@@ -6,6 +6,9 @@
         <title>Home</title>
         <!--Links-->
         <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
+        <link rel="icon" href="{{ asset('images/images_home/control-de-juego.png') }}" type="image/x-icon">
+
+        </script>
     </head>
     <body>
         <!--Barra de Navegacion y Banner Inicio-->
