@@ -35,15 +35,12 @@
             <!--Banner Inicio-->
             <div class="header-content container">
                 <div class="header-txt">
-                    <h1>Compra tu <span>juego</span><br />favorito aquí</h1>
+                    <h1>Compara tu <span>juego</span><br />favorito aquí</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Esse odio alias iste recusandae animi eum nulla
-                        nobis, nam illo quae quos molestiae libero ratione,
-                        similique adipisci beatae? Voluptas, ipsum consequuntur.
+                        Todo lo que necesitas en un solo lugar, los mejores juegos y estadisticas en tiempo real. Porque esto es Proyecto Gamer!
                     </p>
                     <div class="butons">
-                        <a href="#" class="btn-1">Información</a>
+                        <a href="#contact_container" class="btn-1">Información</a>
                         <a href="#todos_juegos" class="btn-1">Juegos</a>
                     </div>
                 </div>
@@ -61,13 +58,13 @@
         <section class="popular container">
             <h2>Juegos Populares</h2>
             <div class="popular-content">
-                <img src="{{ asset('images/images_home/g1.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g2.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g3.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g4.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g5.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g6.jpg') }}" alt="" />
-                <img src="{{ asset('images/images_home/g7.jpg') }}" alt="" />
+                <img src="{{ asset('images/images_home/lige.jpg') }}" alt="League of Leguends"  />
+                <img src="{{ asset('images/images_home/g2.jpg') }}" alt="Battlefield" />
+                <img src="{{ asset('images/images_home/g3.jpg') }}" alt="Halo Reach" />
+                <img src="{{ asset('images/images_home/g4.jpg') }}" alt="Fortnite" />
+                <img src="{{ asset('images/images_home/eve.jpg') }}" alt="Eve" />
+                <img src="{{ asset('images/images_home/g6.jpg') }}" alt="Gta 5" />
+                <img src="{{ asset('images/images_home/vin.png') }}" alt="Vindictos" />
             </div>
         </section>
         <!--cards de los productos/items-->
@@ -76,7 +73,7 @@
 
             <div class="product-content">
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l1.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/halorch.jpg') }}" alt="" />
                     <div class="product-txt">
                         <h3>Halo Reach</h3>
                         <div class="price">
@@ -87,7 +84,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l2.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/free.jpeg') }}" alt="" />
                     <div class="product-txt">
                         <h3>Free Fire</h3>
                         <div class="price">
@@ -98,7 +95,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l3.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/clash.jpg') }}" alt="" />
                     <div class="product-txt">
                         <h3>Class Royale</h3>
                         <div class="price">
@@ -109,7 +106,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l4.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/ciber.jpeg') }}" alt="" />
                     <div class="product-txt">
                         <h3>Cyberpunk 2077</h3>
                         <div class="price">
@@ -120,7 +117,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l5.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/fort.png') }}" alt="" />
                     <div class="product-txt">
                         <h3>Fortnite</h3>
                         <div class="price">
@@ -131,9 +128,9 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l6.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/gears.jpg') }}" alt="" />
                     <div class="product-txt">
-                        <h3>Gear War 3</h3>
+                        <h3>Gears of War 3</h3>
                         <div class="price">
                             <p>$12.59</p>
                             <a href="{{ route('login') }}" class="btn-2">Comprar</a>
@@ -142,9 +139,9 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l7.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/crash.jpg') }}" alt="" />
                     <div class="product-txt">
-                        <h3>Krash Team Nitro</h3>
+                        <h3>Crash Team Nitro</h3>
                         <div class="price">
                             <p>$21.99</p>
                             <a href="{{ route('login') }}" class="btn-2">Comprar</a>
@@ -153,7 +150,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l8.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/gta.jpg') }}" alt="" />
                     <div class="product-txt">
                         <h3>GTA 3</h3>
                         <div class="price">
@@ -164,7 +161,7 @@
                 </div>
 
                 <div class="product-1">
-                    <img src="{{ asset('images/images_home/l9.jpg') }}" alt="" />
+                    <img src="{{ asset('images/images_home/battle.jpg') }}" alt="" />
                     <div class="product-txt">
                         <h3>Battlefield</h3>
                         <div class="price">
@@ -176,7 +173,7 @@
             </div>
         </main>
         <!--seccion del layaout de contacto-->
-        <section class="contact container">
+        <section class="contact container" id="contact_container">
             <div class="contact-content">
                 <h3>Conócenos y has parte de Proyecto Gamer</h3>
                 <form action="">

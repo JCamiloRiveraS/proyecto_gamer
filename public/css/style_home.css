@@ -22,7 +22,7 @@ html{
   }
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #1b1726;
+    background-color: #2A223A;
 }
 img{
     max-width: 100%;
@@ -179,6 +179,11 @@ img{
     border: 2px solid rgba(255,255,255,0.2);
     border-radius: 20px;
     backdrop-filter: blur(4px);
+    transition: .5s;
+}
+.header-content:hover{
+    backdrop-filter: blur(1px);
+    transition: .5s;
 }
 .header-txt{
     flex-basis: 50%;
@@ -258,7 +263,8 @@ h2{
 }
 .popular-content img:hover{
     scale: 105%;
-    box-shadow: 0px 0px 14px rgb(218, 221, 219);
+    border: solid 1px black;
+    box-shadow: 0px 0px 24px black;
 }
 .popular-content img{
     width: 150px;
@@ -269,11 +275,14 @@ h2{
     gap: 50px;
 }
 .product-1{
-    background-color: #2A223A;
+    background-color: #1d1729;
+    border-radius: 0 0 10px 10px;
+    border: solid 1px black;
+    box-shadow: 0px 0px 10px black;
 }
 .product-1:hover{
     scale: 103%;
-    box-shadow: 0px 0px 24px rgba(218, 221, 219, 0.215);
+    box-shadow: 0px 0px 24px black;
     cursor: pointer;
 }
 .product-txt{
