@@ -9,27 +9,96 @@
     <link rel="stylesheet" href="{{ asset('css/style_register.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
 </head>
 
 <body>
     <style>
+        /* Estilos para el cuerpo y encabezado */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: linear-gradient(-45deg, #000000, #1b0927, #000000, #4a0360);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
 
+        .buttom_home {
+            position: absolute;
+        
+            background-color: #d5f0dbf7;
+            z-index: 20;
+            margin-bottom: 42%;
+            margin-left: -90%;
+            padding: 5px;
+            transition: .5s;
+            border-radius: 0 20px 20px 20px;
+        }
+        .buttom_home:hover{
+            scale: 150%;
+            transition: .5s;
+        }
+
+        .buttom_home a{
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+        }
+        /* Animación del fondo */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Estilo para el canvas */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
 
         .form {
-            display: flex;
+            display: block;
             flex-direction: column;
             gap: 10px;
             max-width: 350px;
-            background-color: #fff;
-            padding: 30px;
+            background-color: whitesmoke;
+            padding: 60px 50px;
+
+            transition: .5s;
             border-radius: 20px;
-            position: relative;
-            top: 15%;
-            left: 36%;
             border: solid 2px black;
-            margin-top: 10%;
-            z-index: 2;
+            z-index: 1;
+        }
+
+        .form:hover {
+            scale: 103%;
+            box-shadow: 0px 0px 10px black;
+            transition: .5s;
         }
 
         .title {
@@ -37,34 +106,7 @@
             color: royalblue;
             font-weight: 600;
             letter-spacing: -1px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            left: 17%;
-            padding-left: 30px;
-        }
-
-        .title::before,
-        .title::after {
-            position: absolute;
-            content: "";
-            height: 16px;
-            width: 16px;
-            border-radius: 50%;
-            left: 0px;
-            background-color: royalblue;
-        }
-
-        .title::before {
-            width: 18px;
-            height: 18px;
-            background-color: royalblue;
-        }
-
-        .title::after {
-            width: 18px;
-            height: 18px;
-            animation: pulse 1s linear infinite;
+            text-align: center;
         }
 
         .message,
@@ -88,7 +130,7 @@
         .flex {
             display: flex;
             width: 100%;
-            gap: 6px;
+            gap: 10px;
         }
 
         .form label {
@@ -97,7 +139,8 @@
 
         .form label .input {
             width: 100%;
-            padding: 10px 10px 20px 10px;
+            padding: 10px 70px 10px 10px;
+            margin-bottom: 5%;
             outline: 0;
             border: 1px solid rgba(105, 105, 105, 0.397);
             border-radius: 10px;
@@ -134,6 +177,9 @@
             outline: none;
             background-color: royalblue;
             padding: 10px;
+            margin-top: 5%;
+            margin-left: 38%;
+            margin-bottom: 5%;
             border-radius: 10px;
             color: #fff;
             font-size: 16px;
@@ -141,28 +187,17 @@
         }
 
         .submit:hover {
-            cursor: url(../images/images_home/cursor-de-mano.png), auto;
+            cursor: url(../images/images_home/cursor-de-mano.png),
+                auto;
             background-color: rgb(56, 90, 194);
         }
-
-        @keyframes pulse {
-            from {
-                transform: scale(0.9);
-                opacity: 1;
-            }
-
-            to {
-                transform: scale(1.8);
-                opacity: 0;
-            }
-        }
     </style>
+    <button class="buttom_home"><a href="{{ route('home') }}">home</a></button>
 
-  
 
-    <button><a href="{{ route('home') }}">home</a></button>
+    <canvas id="particleCanvas"></canvas>
+
     <div class="container">
-
         <form class="form" action="{{ route('login.verify') }}" method="POST">
             @csrf
             <p class="title">Ingresar </p>
@@ -173,7 +208,7 @@
                     <small>
                         {{ session('success') }}
                     </small>
-                    <button type="button" class="close" data-dismiss="alert" arial-label="Close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true"></span>
                     </button>
                 </div>
@@ -184,34 +219,26 @@
                     <small>
                         {{ $message }}
                     </small>
-                    <button type="button" class="close" data-dismiss="alert" arial-label="Close">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true"></span>
                     </button>
                 </div>
             @enderror
 
-
             <label>
-                <input required="" placeholder="" type="email" class="input" name="email" id="form_email">
+                <input required placeholder="" type="email" class="input" name="email" id="form_email">
                 <span>Email</span>
             </label>
 
             <label>
-                <input required="" placeholder="" type="password" class="input" name="password" id="form_password">
+                <input required placeholder="" type="password" class="input" name="password" id="form_password">
                 <span>Contraseña</span>
             </label>
 
             <button class="submit" type="submit">Ingresar</button>
-            <p class="signin">No tienes una cuenta ? <a href="{{ route('register') }}">Crear una Cuenta Ya!</a> </p>
+            <p class="signin">No tienes una cuenta? <a href="{{ route('register') }}">Crear una Cuenta Ya!</a></p>
         </form>
-
-
     </div>
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
@@ -221,6 +248,75 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
 
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+            update() {
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+                this.x += this.directionX;
+                this.y += this.directionY;
+                this.draw();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 5) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 2) - 1;
+                let directionY = (Math.random() * 2) - 1;
+                let color = '#ffffff';
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            particlesArray.forEach(particle => {
+                particle.update();
+            });
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 
 </html>
